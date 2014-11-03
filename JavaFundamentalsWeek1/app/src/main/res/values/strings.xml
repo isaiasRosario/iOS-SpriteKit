@@ -7,8 +7,8 @@
     <string name="button">ADD</string>
     <string name="TextView">List Total</string>
     <string name="TextView2">List Average</string>
-    <string name="TextView3">1</string>
-    <string name="TextView4">2</string>
+    <string name="TextView3">0</string>
+    <string name="TextView4">0</string>
     <string name="editText">Enter List Item Here</string>
 
 </resources>
