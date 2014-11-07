@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Java Fundamentals Week 1</string>
+    <string name="app_name">Just Testing</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="button">ADD</string>
@@ -10,5 +10,7 @@
     <string name="TextView3">0</string>
     <string name="TextView4">0</string>
     <string name="editText">Enter List Item Here</string>
+    <string name="showAll">Show All Items</string>
+    <string name="itWorks">It Worked!</string>
 
 </resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Solo Probando</string>
+    <string name="hello_world">Hola Mundo</string>
+    <string name="action_settings">Ajustes</string>
+    <string name="button">AÑADIR</string>
+    <string name="TextView">Lista Total</string>
+    <string name="TextView2">Lista Media</string>
+    <string name="TextView3">0</string>
+    <string name="TextView4">0</string>
+    <string name="editText">Introduzca Elementos Aquí</string>
+    <string name="showAll">Mostrar Todos Artículos</string>
+    <string name="itWorks">Si Trabaja!</string>
+
+</resources>
