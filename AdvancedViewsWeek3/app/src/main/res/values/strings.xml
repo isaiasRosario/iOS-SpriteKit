@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">"Advanced Views Week 3"</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="movieArray">
+        <item>Frozen</item>
+        <item>Cars</item>
+        <item>Finding Nemo</item>
+        <item>Planet of the Apes</item>
+        <item>Big Hero 6</item>
+    </string-array>
+
+    <string name="movieName">Movie Name: </string>
+    <string name="movieRating">Movie Rating: </string>
+    <string name="movieDuration">Movie Duration: </string>
+    <string name="movieDetail">Movie Details: </string>
+    <string name="blank"></string>
+
+</resources>
