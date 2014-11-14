@@ -114,23 +114,26 @@ public class MainActivity extends Activity {
         movieInfo.put(4, mov5);
 
         if (getResources().getConfiguration().orientation == 2) {
+
             listView = (ListView) findViewById(R.id.listView);
             CustomAdapter adapter = new CustomAdapter(movieInfo);
             listView.setAdapter(adapter);
 
-//            listView.setOnItemClickListener((parent, view, position, id)-> {
-//                TextView mName = (TextView) findViewById(R.id.name);
-//                mName.setText(movieInfo.get(position).getMovieName());
-//                TextView mRating = (TextView) findViewById(R.id.rating);
-//                mRating.setText(movieInfo.get(position).getMovieRating());
-//                TextView mTime = (TextView) findViewById(R.id.time);
-//                mTime.setText(movieInfo.get(position).getMovieRating());
-//                TextView mDetail = (TextView) findViewById(R.id.details);
-//                mDetail.setText(movieInfo.get(position).getMovieRating());
-//
-//
-//            });
+            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    TextView mName = (TextView) findViewById(R.id.name);
+                    mName.setText(movieInfo.get(position).getMovieName());
+                    TextView mRating = (TextView) findViewById(R.id.rating);
+                    mRating.setText(movieInfo.get(position).getMovieRating());
+                    TextView mTime = (TextView) findViewById(R.id.time);
+                    mTime.setText(movieInfo.get(position).getMovieTime());
+                    TextView mDetail = (TextView) findViewById(R.id.details);
+                    mDetail.setText(movieInfo.get(position).getMovieDetail());
+                }
+
+            });
 
         }
 
