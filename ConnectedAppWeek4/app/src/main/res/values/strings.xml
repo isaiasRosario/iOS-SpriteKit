@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">ConnectedAppWeek4</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="app_name">Reddit API Search</string>
     <string name="action_settings">Settings</string>
-    <string name="button">New Button</string>
-    <string name="hint">HInt</string>
+    <string name="button">Search Reddit</string>
+    <string name="hint">Search</string>
 
 </resources>

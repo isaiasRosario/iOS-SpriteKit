@@ -14,32 +14,30 @@
         android:id="@+id/linearLayout"
         android:weightSum="1">
 
-        <ListView
-            android:layout_width="wrap_content"
-            android:layout_height="342dp"
-            android:id="@+id/listView"
-            android:layout_weight="0.22" />
-
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:id="@+id/editText"
-            android:layout_weight="0.62"
             android:inputType="text"
             android:hint="@string/hint" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/button"
-            android:id="@+id/button"
-            android:layout_gravity="center_horizontal" />
 
         <ProgressBar
             style="?android:attr/progressBarStyleSmall"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:id="@+id/progressBar" />
+
+        <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="360dp"
+            android:id="@+id/listView" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/button"
+            android:id="@+id/button"
+            android:layout_gravity="center_horizontal" />
 
     </LinearLayout>
 
