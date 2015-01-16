@@ -17,3 +17,5 @@ allprojects {
         jcenter()
     }
 }
+apply plugin: 'signing'
+apply plugin: 'application'

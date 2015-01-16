@@ -1,3 +1,7 @@
+// Isaias Rosairo
+// Java1
+// Week 2 Fundamentals
+
 package com.example.isaiasrosario.java1fundamentals;
 
 import android.os.Bundle;
@@ -35,7 +39,10 @@ public class MainActivity extends Activity implements View.OnClickListener, Adap
       setContentView(R.layout.activity_main);
 
       Button button = (Button) findViewById(R.id.button);
+      Button button2 = (Button) findViewById(R.id.button2);
       button.setOnClickListener(this);
+      button2.setOnClickListener(this);
+
 
 
       listItems = (ListView) findViewById(R.id.listView);
@@ -60,6 +67,10 @@ public class MainActivity extends Activity implements View.OnClickListener, Adap
 
          case (R.id.button): {
             addItem();
+            break;
+         }
+         case (R.id.button2): {
+            allItems();
             break;
          }
 
@@ -89,9 +100,9 @@ public class MainActivity extends Activity implements View.OnClickListener, Adap
    }
 
    public void addItem(){
-      if (enteredText.getText().toString().equals("")){
+      if (enteredText.getText().toString().equals("")||listArray.contains(enteredText.getText().toString())){
          Context context = getApplicationContext();
-         CharSequence text = ("You Did Not Enter Item");
+         CharSequence text = ("Please Try Again!");
          int duration = Toast.LENGTH_SHORT;
          Toast toast = Toast.makeText(context, text, duration);
          toast.show();
@@ -116,6 +127,30 @@ public class MainActivity extends Activity implements View.OnClickListener, Adap
 
          enteredText.setText("");
       }
+
+   }
+
+   public void allItems(){
+      String item;
+      String allItems = "";
+
+      for (int i = 0; i< listArray.size(); ++i) {
+
+         item = listArray.get(i);
+         allItems += (item + System.getProperty("line.separator"));
+
+      }
+
+      AlertDialog.Builder alert = new AlertDialog.Builder(this);
+      alert.setTitle("All the Items!");
+      alert.setMessage(allItems);
+      alert.setNegativeButton("Close", new DialogInterface.OnClickListener(){
+         public void onClick(DialogInterface dialog, int whichButton){
+
+         }
+      });
+
+      alert.show();
 
    }
 
