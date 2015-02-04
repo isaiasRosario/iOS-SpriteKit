@@ -128,6 +128,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         protected void onPostExecute(JSONObject result){
             redditInfo = result;
+
+           System.out.println(redditInfo);
             runJSON();
         }
     }
