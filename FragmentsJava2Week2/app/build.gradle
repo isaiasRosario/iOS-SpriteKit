@@ -5,7 +5,7 @@ android {
     buildToolsVersion "21.1.2"
 
     defaultConfig {
-        applicationId "com.fullsail.fragmentsjava2week2"
+        applicationId "com.fullsail.fragmentsjava2week1"
         minSdkVersion 14
         targetSdkVersion 21
         versionCode 1
