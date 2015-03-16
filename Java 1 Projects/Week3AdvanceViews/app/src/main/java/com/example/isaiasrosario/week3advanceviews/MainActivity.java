@@ -83,7 +83,7 @@ public class MainActivity extends ActionBarActivity {
 
       listView = (ListView) findViewById(R.id.listView);
       spinnerView = (Spinner) findViewById(R.id.spinner);
-      movies = new ArrayList<Movies>();
+      movies = new ArrayList<>();
 
       Movies mov1 = new Movies();
       mov1.setMovieName("Frozen");
