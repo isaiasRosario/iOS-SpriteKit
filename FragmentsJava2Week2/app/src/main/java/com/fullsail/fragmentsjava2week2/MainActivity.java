@@ -5,13 +5,19 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 
 public class MainActivity extends ActionBarActivity implements FragmentOneListener{
@@ -29,12 +35,10 @@ public class MainActivity extends ActionBarActivity implements FragmentOneListen
 
       if(!network) networkAlert();
 
-
-
       setContentView(R.layout.activity_main);
       fragManager = getFragmentManager();
-      fragManager.beginTransaction().replace(R.id.containerOne, new FragmentOne()).commit();
-      fragManager.beginTransaction().replace(R.id.containerTwo, new FragmentTwo()).commit();
+      fragManager.beginTransaction().replace(R.id.containerOne, new FragmentTwo()).commit();
+      fragManager.beginTransaction().replace(R.id.containerTwo, new FragmentOne()).commit();
 
 
    }
@@ -53,7 +57,7 @@ public class MainActivity extends ActionBarActivity implements FragmentOneListen
 
       fragManager = getFragmentManager();
       Fragment frag2 = FragmentTwo.instancof(data, data1, data2, data3);
-      fragManager.beginTransaction().replace(R.id.containerTwo, frag2).commit();
+      fragManager.beginTransaction().replace(R.id.containerOne, frag2).commit();
 
    }
 
@@ -66,6 +70,8 @@ public class MainActivity extends ActionBarActivity implements FragmentOneListen
       return true;
    }
 
+   public boolean onDestroyOptionsMenu
+
    @Override
    public boolean onOptionsItemSelected(MenuItem item) {
       // Handle action bar item clicks here. The action bar will
@@ -75,6 +81,49 @@ public class MainActivity extends ActionBarActivity implements FragmentOneListen
 
       //noinspection SimplifiableIfStatement
       if (id == R.id.action_settings) {
+
+         Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
+         startActivity(intent);
+
+         SharedPreferences mainPref = PreferenceManager.getDefaultSharedPreferences(this);
+
+         String color = mainPref.getString("PREF_LIST", "DEFAULT");
+
+         System.out.println(color);
+
+         if (color.equals("DEFAULT")){
+            ((EditText)findViewById(R.id.editText)).setHintTextColor(Color.BLACK);
+            ((Button)findViewById(R.id.button)).setTextColor(Color.BLACK);
+            ((TextView)findViewById(R.id.textView)).setTextColor(Color.BLACK);
+            ((TextView)findViewById(R.id.textView2)).setTextColor(Color.BLACK);
+            ((TextView)findViewById(R.id.textView3)).setTextColor(Color.BLACK);
+            ((TextView)findViewById(R.id.textView4)).setTextColor(Color.BLACK);
+         }
+         if (color.equals("YELLOW")){
+            ((EditText)findViewById(R.id.editText)).setHintTextColor(Color.YELLOW);
+            ((Button)findViewById(R.id.button)).setTextColor(Color.YELLOW);
+            ((TextView)findViewById(R.id.textView)).setTextColor(Color.YELLOW);
+            ((TextView)findViewById(R.id.textView2)).setTextColor(Color.YELLOW);
+            ((TextView)findViewById(R.id.textView3)).setTextColor(Color.YELLOW);
+            ((TextView)findViewById(R.id.textView4)).setTextColor(Color.YELLOW);
+         }
+         if (color.equals("RED")){
+            ((EditText)findViewById(R.id.editText)).setHintTextColor(Color.RED);
+            ((Button)findViewById(R.id.button)).setTextColor(Color.RED);
+            ((TextView)findViewById(R.id.textView)).setTextColor(Color.RED);
+            ((TextView)findViewById(R.id.textView2)).setTextColor(Color.RED);
+            ((TextView)findViewById(R.id.textView3)).setTextColor(Color.RED);
+            ((TextView)findViewById(R.id.textView4)).setTextColor(Color.RED);
+         }
+         if (color.equals("MAGENTA")){
+            ((EditText)findViewById(R.id.editText)).setHintTextColor(Color.MAGENTA);
+            ((Button)findViewById(R.id.button)).setTextColor(Color.MAGENTA);
+            ((TextView)findViewById(R.id.textView)).setTextColor(Color.MAGENTA);
+            ((TextView)findViewById(R.id.textView2)).setTextColor(Color.MAGENTA);
+            ((TextView)findViewById(R.id.textView3)).setTextColor(Color.MAGENTA);
+            ((TextView)findViewById(R.id.textView4)).setTextColor(Color.MAGENTA);
+         }
+
          return true;
       }
 
