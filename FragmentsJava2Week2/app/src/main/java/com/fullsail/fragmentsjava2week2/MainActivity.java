@@ -24,6 +24,8 @@ public class MainActivity extends ActionBarActivity implements FragmentOneListen
 
    FragmentManager fragManager;
 
+   String color = "";
+
    @Override
    public void onCreate(Bundle savedInstanceState) {
       // Get any saved data
@@ -70,7 +72,6 @@ public class MainActivity extends ActionBarActivity implements FragmentOneListen
       return true;
    }
 
-   public boolean onDestroyOptionsMenu
 
    @Override
    public boolean onOptionsItemSelected(MenuItem item) {
@@ -87,42 +88,10 @@ public class MainActivity extends ActionBarActivity implements FragmentOneListen
 
          SharedPreferences mainPref = PreferenceManager.getDefaultSharedPreferences(this);
 
-         String color = mainPref.getString("PREF_LIST", "DEFAULT");
+         color = mainPref.getString("PREF_LIST", "DEFAULT");
 
          System.out.println(color);
-
-         if (color.equals("DEFAULT")){
-            ((EditText)findViewById(R.id.editText)).setHintTextColor(Color.BLACK);
-            ((Button)findViewById(R.id.button)).setTextColor(Color.BLACK);
-            ((TextView)findViewById(R.id.textView)).setTextColor(Color.BLACK);
-            ((TextView)findViewById(R.id.textView2)).setTextColor(Color.BLACK);
-            ((TextView)findViewById(R.id.textView3)).setTextColor(Color.BLACK);
-            ((TextView)findViewById(R.id.textView4)).setTextColor(Color.BLACK);
-         }
-         if (color.equals("YELLOW")){
-            ((EditText)findViewById(R.id.editText)).setHintTextColor(Color.YELLOW);
-            ((Button)findViewById(R.id.button)).setTextColor(Color.YELLOW);
-            ((TextView)findViewById(R.id.textView)).setTextColor(Color.YELLOW);
-            ((TextView)findViewById(R.id.textView2)).setTextColor(Color.YELLOW);
-            ((TextView)findViewById(R.id.textView3)).setTextColor(Color.YELLOW);
-            ((TextView)findViewById(R.id.textView4)).setTextColor(Color.YELLOW);
-         }
-         if (color.equals("RED")){
-            ((EditText)findViewById(R.id.editText)).setHintTextColor(Color.RED);
-            ((Button)findViewById(R.id.button)).setTextColor(Color.RED);
-            ((TextView)findViewById(R.id.textView)).setTextColor(Color.RED);
-            ((TextView)findViewById(R.id.textView2)).setTextColor(Color.RED);
-            ((TextView)findViewById(R.id.textView3)).setTextColor(Color.RED);
-            ((TextView)findViewById(R.id.textView4)).setTextColor(Color.RED);
-         }
-         if (color.equals("MAGENTA")){
-            ((EditText)findViewById(R.id.editText)).setHintTextColor(Color.MAGENTA);
-            ((Button)findViewById(R.id.button)).setTextColor(Color.MAGENTA);
-            ((TextView)findViewById(R.id.textView)).setTextColor(Color.MAGENTA);
-            ((TextView)findViewById(R.id.textView2)).setTextColor(Color.MAGENTA);
-            ((TextView)findViewById(R.id.textView3)).setTextColor(Color.MAGENTA);
-            ((TextView)findViewById(R.id.textView4)).setTextColor(Color.MAGENTA);
-         }
+         changeColor();
 
          return true;
       }
@@ -158,5 +127,41 @@ public class MainActivity extends ActionBarActivity implements FragmentOneListen
 
       alert.show();
 
+   }
+
+   public void changeColor(){
+
+      if (color.equals("DEFAULT")){
+         ((EditText)findViewById(R.id.editText)).setHintTextColor(Color.BLACK);
+         ((Button)findViewById(R.id.button)).setTextColor(Color.BLACK);
+         ((TextView)findViewById(R.id.textView)).setTextColor(Color.BLACK);
+         ((TextView)findViewById(R.id.textView2)).setTextColor(Color.BLACK);
+         ((TextView)findViewById(R.id.textView3)).setTextColor(Color.BLACK);
+         ((TextView)findViewById(R.id.textView4)).setTextColor(Color.BLACK);
+      }
+      if (color.equals("YELLOW")){
+         ((EditText)findViewById(R.id.editText)).setHintTextColor(Color.YELLOW);
+         ((Button)findViewById(R.id.button)).setTextColor(Color.YELLOW);
+         ((TextView)findViewById(R.id.textView)).setTextColor(Color.YELLOW);
+         ((TextView)findViewById(R.id.textView2)).setTextColor(Color.YELLOW);
+         ((TextView)findViewById(R.id.textView3)).setTextColor(Color.YELLOW);
+         ((TextView)findViewById(R.id.textView4)).setTextColor(Color.YELLOW);
+      }
+      if (color.equals("RED")){
+         ((EditText)findViewById(R.id.editText)).setHintTextColor(Color.RED);
+         ((Button)findViewById(R.id.button)).setTextColor(Color.RED);
+         ((TextView)findViewById(R.id.textView)).setTextColor(Color.RED);
+         ((TextView)findViewById(R.id.textView2)).setTextColor(Color.RED);
+         ((TextView)findViewById(R.id.textView3)).setTextColor(Color.RED);
+         ((TextView)findViewById(R.id.textView4)).setTextColor(Color.RED);
+      }
+      if (color.equals("MAGENTA")){
+         ((EditText)findViewById(R.id.editText)).setHintTextColor(Color.MAGENTA);
+         ((Button)findViewById(R.id.button)).setTextColor(Color.MAGENTA);
+         ((TextView)findViewById(R.id.textView)).setTextColor(Color.MAGENTA);
+         ((TextView)findViewById(R.id.textView2)).setTextColor(Color.MAGENTA);
+         ((TextView)findViewById(R.id.textView3)).setTextColor(Color.MAGENTA);
+         ((TextView)findViewById(R.id.textView4)).setTextColor(Color.MAGENTA);
+      }
    }
 }

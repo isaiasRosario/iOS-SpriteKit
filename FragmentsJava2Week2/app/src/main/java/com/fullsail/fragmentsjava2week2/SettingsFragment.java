@@ -20,7 +20,7 @@ public class SettingsFragment extends PreferenceFragment{
    public void onActivityCreated(Bundle savedInstanceState){
       super.onActivityCreated(savedInstanceState);
 
-      Preference preference = findPreference("PREF_LIST");
+      Preference preference = findPreference("PREF_CLICK");
       preference.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener(){
          @Override
       public boolean onPreferenceClick(Preference preference){
