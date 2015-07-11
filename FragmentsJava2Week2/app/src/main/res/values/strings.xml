@@ -10,8 +10,8 @@
     <string name="text3">Large Text</string>
     <string name="text4">Large Text</string>
     <string name="change_color">Change Color</string>
-    <string name="delete_data_summary">Delete Summary</string>
+    <string name="delete_data_summary">Delete All The Saved Data</string>
     <string name="delete_data">Delete Data</string>
-    <string name="list_summary">List Summary</string>
-    <string name="list_title">List Title</string>
+    <string name="list_summary">Change text color in app.</string>
+    <string name="list_title">Select Color</string>
 </resources>

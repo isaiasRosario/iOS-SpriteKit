@@ -24,5 +24,5 @@
         android:layout_height="fill_parent"
         android:id="@+id/listView"
         android:layout_gravity="center_horizontal"
-        android:background="#ff57ff57"/>
+        android:background="#ff1f7eff"/>
 </LinearLayout>
