@@ -15,7 +15,6 @@
 		ECAF021E1B4F778600D8894E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECAF021D1B4F778600D8894E /* Images.xcassets */; };
 		ECAF02211B4F778600D8894E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECAF021F1B4F778600D8894E /* LaunchScreen.xib */; };
 		ECAF022D1B4F778700D8894E /* testGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECAF022C1B4F778700D8894E /* testGameTests.swift */; };
-		ECAF023E1B4F7CEC00D8894E /* explosion.wav in Resources */ = {isa = PBXBuildFile; fileRef = ECAF023B1B4F7CEC00D8894E /* explosion.wav */; };
 		ECAF02461B50B93F00D8894E /* ship-left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ECAF02401B50B93F00D8894E /* ship-left@2x.png */; };
 		ECAF02471B50B93F00D8894E /* ship-right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ECAF02411B50B93F00D8894E /* ship-right@2x.png */; };
 		ECAF02481B50B93F00D8894E /* ship-left.png in Resources */ = {isa = PBXBuildFile; fileRef = ECAF02421B50B93F00D8894E /* ship-left.png */; };
@@ -49,7 +48,6 @@
 		ECAF02261B4F778700D8894E /* testGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECAF022B1B4F778700D8894E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECAF022C1B4F778700D8894E /* testGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testGameTests.swift; sourceTree = "<group>"; };
-		ECAF023B1B4F7CEC00D8894E /* explosion.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = explosion.wav; sourceTree = "<group>"; };
 		ECAF02401B50B93F00D8894E /* ship-left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ship-left@2x.png"; sourceTree = "<group>"; };
 		ECAF02411B50B93F00D8894E /* ship-right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ship-right@2x.png"; sourceTree = "<group>"; };
 		ECAF02421B50B93F00D8894E /* ship-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ship-left.png"; sourceTree = "<group>"; };
@@ -108,7 +106,6 @@
 				ECAF021F1B4F778600D8894E /* LaunchScreen.xib */,
 				ECAF024D1B50BD8E00D8894E /* background-music.mp3 */,
 				ECAF02531B50C3FE00D8894E /* ball.mp3 */,
-				ECAF023B1B4F7CEC00D8894E /* explosion.wav */,
 				ECAF024C1B50B97000D8894E /* Images.atlas */,
 				ECAF02101B4F778600D8894E /* Supporting Files */,
 			);
@@ -202,6 +199,7 @@
 				TargetAttributes = {
 					ECAF020C1B4F778600D8894E = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 66R8VXXAHA;
 					};
 					ECAF02251B4F778700D8894E = {
 						CreatedOnToolsVersion = 6.4;
@@ -235,7 +233,6 @@
 			files = (
 				ECAF02481B50B93F00D8894E /* ship-left.png in Resources */,
 				ECAF02541B50C3FE00D8894E /* ball.mp3 in Resources */,
-				ECAF023E1B4F7CEC00D8894E /* explosion.wav in Resources */,
 				ECAF02211B4F778600D8894E /* LaunchScreen.xib in Resources */,
 				ECAF02461B50B93F00D8894E /* ship-left@2x.png in Resources */,
 				ECAF02521B50BFE200D8894E /* ball.png in Resources */,
@@ -392,9 +389,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = testGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -402,9 +402,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = testGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -461,6 +464,7 @@
 				ECAF02321B4F778700D8894E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		ECAF02331B4F778700D8894E /* Build configuration list for PBXNativeTarget "testGameTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +473,7 @@
 				ECAF02351B4F778700D8894E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
