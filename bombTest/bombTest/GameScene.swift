@@ -118,25 +118,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         bomb.physicsBody?.restitution = 1
         bomb.physicsBody?.friction = 0.0
         bomb.physicsBody?.linearDamping = 0.0
-        //bomb.physicsBody?.allowsRotation = true
         self.addChild(bomb)
-        
-        // Bomb2 sprite node property set up
-//        bomb2 = Bomb(imageNamed: "blue_sprite_right_1.png")
-//        bomb2.name = "bomb2"
-//        bomb2.yScale = 2
-//        bomb2.xScale = 2
-//        bomb2.position = CGPoint(x: CGRectGetMidX(self.frame)+50, y: CGRectGetMidY(self.frame))
-//        bomb2.physicsBody = SKPhysicsBody(circleOfRadius: (bomb.size.width / 2.6) )
-//        bomb2.physicsBody?.categoryBitMask = PhysicsCategory.Bomb
-//        bomb2.physicsBody?.collisionBitMask = PhysicsCategory.Bomb | PhysicsCategory.Wall
-//        bomb2.physicsBody?.contactTestBitMask = PhysicsCategory.Bomb | PhysicsCategory.Wall
-//        bomb2.physicsBody?.dynamic = true
-//        bomb2.physicsBody?.restitution = 1
-//        bomb2.physicsBody?.friction = 0.0
-//        bomb2.physicsBody?.linearDamping = 0.0
-//        //bomb2.physicsBody?.allowsRotation = true
-//        self.addChild(bomb2)
         
         // Walking sound for bombs
         let sound = SKAction.playSoundFileNamed("fuse.mp3", waitForCompletion: true)
@@ -145,7 +127,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // Atals for bomb animation setup
         let atlas = SKTextureAtlas(named: "bomb")
         
-            let anim = SKAction.animateWithTextures([
+        let anim = SKAction.animateWithTextures([
                 atlas.textureNamed("sprite_left_1.png"),
                 atlas.textureNamed("sprite_left_2.png"),
                 atlas.textureNamed("sprite_left_3.png"),
@@ -153,7 +135,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 ], timePerFrame: 0.09)
         
             bombWalk = SKAction.repeatActionForever(anim)
-        
         
         let atlasExp = SKTextureAtlas(named: "explode")
         let expSound = SKAction.playSoundFileNamed("explode.wav", waitForCompletion: false)
@@ -172,15 +153,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // Run explode animation action and remove node after completion
         let rem = SKAction.removeFromParent()
         let seqExp = SKAction.sequence([SKAction.waitForDuration(9), blowUp, expSound, exp, rem])
-        
-        
 
             bomb.runAction(bombWalk)
             bomb.runAction(wSound, withKey: "wSound")
-//            bomb.runAction(exp)
   
-        bomb.runAction(seqExp, completion: {
-//            self.scene?.view?.paused = true
+            bomb.runAction(seqExp, completion: {
             
             self.backgroundMusicPlayer.pause()
             self.bomb.removeFromParent()
@@ -190,16 +167,32 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             secondScene.scaleMode = SKSceneScaleMode.AspectFill
             self.scene!.view?.presentScene(secondScene, transition: transition)
             
-        })
+            })
         
-//        completion: {
-//            self.userInteractionEnabled = false
-//            
-//            self.bomb.removeActionForKey("wSound")
-//            
-//        }
+        // Moves sprite nodes
+        let moveBomb = SKAction.moveByX(-500 , y: 0,duration: 4)
+        let delay = SKAction.waitForDuration(0)
+        let moveBack = moveBomb.reversedAction()
+        seq = SKAction.sequence([delay, moveBomb, moveBack])
+        rseq = SKAction.repeatActionForever(seq)
+        bomb.runAction(rseq, withKey: "seq")
 
-        
+        // Bomb2 sprite node property set up
+//                bomb2 = Bomb(imageNamed: "blue_sprite_right_1.png")
+//                bomb2.name = "bomb2"
+//                bomb2.yScale = 2
+//                bomb2.xScale = 2
+//                bomb2.position = CGPoint(x: CGRectGetMidX(self.frame)+50, y: CGRectGetMidY(self.frame))
+//                bomb2.physicsBody = SKPhysicsBody(circleOfRadius: (bomb.size.width / 2.6) )
+//                bomb2.physicsBody?.categoryBitMask = PhysicsCategory.Bomb
+//                bomb2.physicsBody?.collisionBitMask = PhysicsCategory.Bomb | PhysicsCategory.Wall
+//                bomb2.physicsBody?.contactTestBitMask = PhysicsCategory.Bomb | PhysicsCategory.Wall
+//                bomb2.physicsBody?.dynamic = true
+//                bomb2.physicsBody?.restitution = 1
+//                bomb2.physicsBody?.friction = 0.0
+//                bomb2.physicsBody?.linearDamping = 0.0
+//                //bomb2.physicsBody?.allowsRotation = true
+//                self.addChild(bomb2)
        
 //            let anim2 = SKAction.animateWithTextures([
 //                atlas.textureNamed("blue_sprite_right_1.png"),
@@ -210,17 +203,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 //            
 //            bombWalk2 = SKAction.repeatActionForever(anim2)
 //            bomb2.runAction(bombWalk2)
-        
-        // Moves sprite nodes
-        let moveBomb = SKAction.moveByX(-500 , y: 0,duration: 4)
-//        let moveBomb2 = SKAction.moveByX(self.frame.width, y: 0, duration: 6)
-        let delay = SKAction.waitForDuration(0)
-        let moveBack = moveBomb.reversedAction()
-        seq = SKAction.sequence([delay, moveBomb, moveBack])
-        rseq = SKAction.repeatActionForever(seq)
-//        seq2 = SKAction.sequence([delay, moveBomb2])
-        bomb.runAction(rseq, withKey: "seq")
-//        bomb2.runAction(seq2, withKey: "seq2")
+//                let moveBomb2 = SKAction.moveByX(self.frame.width, y: 0, duration: 6)
+//                seq2 = SKAction.sequence([delay, moveBomb2])
+//                bomb2.runAction(seq2, withKey: "seq2")
     
     }
     
@@ -259,11 +244,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     backgroundMusicPlayer.pause()
                     
                 }
-                
-                
-                
-                
-                
             }
         }
     }
@@ -290,40 +270,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // Check to see which physics categories have contaced
         if firstBody.categoryBitMask == PhysicsCategory.Bomb && secondBody.categoryBitMask == PhysicsCategory.Bomb{
             println("You Hit Bomb.")
-//            firstBody.node?.physicsBody?.applyImpulse(CGVector(
-//                dx: CGFloat(1.2),
-//                dy: CGFloat(1.2)))
-//            
-//            secondBody.node?.physicsBody?.applyImpulse(CGVector(
-//                dx: CGFloat(1.2),
-//                dy: CGFloat(1.2)))
-        
-    
-            // Play explode sound whne bobs contact
-//            runAction(SKAction.playSoundFileNamed("explode.wav", waitForCompletion: false))
-//            
-//            // Atlas setup for explode animation
-//            let atlas = SKTextureAtlas(named: "explode")
-//            
-//            let exp = SKAction.animateWithTextures([
-//                atlas.textureNamed("ex1.png"),
-//                atlas.textureNamed("ex2.png"),
-//                atlas.textureNamed("ex3.png"),
-//                atlas.textureNamed("ex4.png"),
-//                atlas.textureNamed("ex5.png"),
-//                atlas.textureNamed("ex6.png")
-//                ], timePerFrame: 0.09)
-//            
-//            // Run explode animation action and remove node after completion
-//            firstBody.node?.runAction(exp, completion: {
-//                firstBody.node?.removeFromParent()
-//            })
-//            secondBody.node?.runAction(exp, completion: {
-//                secondBody.node?.removeFromParent()
-//            })
-//
-//            // Stop action that plays walking sound
-//            removeActionForKey("wSound")
+
         }
         
         // Check to see if sprite node hit the wall
@@ -352,26 +299,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             firstBody.node?.runAction(bombWalk)
             firstBody.node?.runAction(rseq)
             
-            //            firstBody.node?.physicsBody?.applyImpulse(CGVector(
-            //                dx: CGFloat(2),
-            //                dy: CGFloat(2)))
-            
         }
-        
-    
     }
-
-    
    
     // Update function for each frame
      override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
-        
-//        if bomb.texture == "ex6.png"{
-//            self.scene?.view?.paused = true
-//            score.text = "game over"
-//        
-//        }
         
         // Keeps background image in place
         bg.size = self.frame.size
