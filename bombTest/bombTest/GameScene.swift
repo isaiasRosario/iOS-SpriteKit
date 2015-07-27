@@ -35,17 +35,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var backgroundMusicPlayer: AVAudioPlayer!
     var count = 0
     let score = SKLabelNode(fontNamed:"Chalkduster")
+    var emitter: SKEmitterNode!
 
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         
+        // Cage floor set up
         let cageFloor = childNodeWithName("cageFloor")
         cageFloor?.userInteractionEnabled = false
         cageFloor?.physicsBody?.categoryBitMask = PhysicsCategory.Floor
         cageFloor?.physicsBody?.collisionBitMask = PhysicsCategory.Bomb
         cageFloor?.physicsBody?.contactTestBitMask = PhysicsCategory.Bomb
         
+        // Socre label set up
         score.text = "0";
         score.fontSize = 45;
         score.zPosition = 3.0
@@ -103,13 +106,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // Play sound when sprite has spawned
         runAction(SKAction.playSoundFileNamed("spawn.wav", waitForCompletion: false))
         
+        let randomNumber = arc4random_uniform(100) + 10
+        println(randomNumber)
+        
         // Bomb sprite node property set up
         bomb = Bomb(imageNamed: "sprite_left_1.png")
         bomb.name = "bomb"
         bomb.yScale = 2
         bomb.xScale = 2
         bomb.zPosition = 2.0
-        bomb.position = CGPoint(x: CGRectGetMidX(self.frame),y:CGRectGetMidY(self.frame))
+        bomb.position = CGPoint(x: CGRectGetMidX(self.frame),y:CGRectGetMidY(self.frame)-CGFloat(randomNumber))
         bomb.physicsBody = SKPhysicsBody(circleOfRadius: (bomb.size.width / 2) )
         bomb.physicsBody?.categoryBitMask = PhysicsCategory.Bomb
         bomb.physicsBody?.collisionBitMask = PhysicsCategory.Bomb | PhysicsCategory.Wall
@@ -119,6 +125,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         bomb.physicsBody?.friction = 0.0
         bomb.physicsBody?.linearDamping = 0.0
         self.addChild(bomb)
+        
+        emitter = SKEmitterNode(fileNamed: "spark.sks")
+        emitter.targetNode = self
+        bomb.addChild(emitter)
         
         // Walking sound for bombs
         let sound = SKAction.playSoundFileNamed("fuse.mp3", waitForCompletion: true)
@@ -228,13 +238,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 runAction(SKAction.repeatActionForever(
                     SKAction.sequence([
                         SKAction.runBlock(setupBomb),
-                        SKAction.waitForDuration(5.0)
+                        SKAction.waitForDuration(3.0)
                         ])
                     ))
                 
                 
             }else if touchedNode.name == "pause"{
-                
+                // Pause button 
                 if self.scene?.view?.paused == true{
                     self.scene?.view?.paused = false
                     backgroundMusicPlayer.play()
@@ -284,6 +294,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 //                dy: CGFloat(2)))
         
         }
+        
+        // Check to see if bomb is on the cage
         if firstBody.categoryBitMask == PhysicsCategory.Bomb && secondBody.categoryBitMask == PhysicsCategory.Floor {
             firstBody.node?.userInteractionEnabled = false
             println("Bomb Has Been Defused!")
@@ -298,6 +310,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             firstBody.node?.userInteractionEnabled = false
             firstBody.node?.runAction(bombWalk)
             firstBody.node?.runAction(rseq)
+            firstBody.node?.removeAllChildren()
             
         }
     }
