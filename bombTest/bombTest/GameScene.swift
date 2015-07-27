@@ -34,7 +34,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var seq2: SKAction!
     var backgroundMusicPlayer: AVAudioPlayer!
     var count = 0
-    let score = SKLabelNode(fontNamed:"Chalkduster")
+    let score = SKLabelNode(fontNamed:"Chalkduster-Bold")
     var emitter: SKEmitterNode!
 
     
@@ -49,10 +49,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         cageFloor?.physicsBody?.contactTestBitMask = PhysicsCategory.Bomb
         
         // Socre label set up
-        score.text = "0";
-        score.fontSize = 45;
+        score.text = "0"
+        score.fontSize = 100
         score.zPosition = 3.0
-        score.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame)+185);
+        score.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame)+185)
         self.addChild(score)
 
         
