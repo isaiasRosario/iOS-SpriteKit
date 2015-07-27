@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC4FFA591B653E79004231E5 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = EC4FFA581B653E79004231E5 /* pause.png */; };
+		EC4FFA611B659643004231E5 /* fuse.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EC4FFA601B659643004231E5 /* fuse.mp3 */; };
+		EC4FFA631B65B042004231E5 /* OverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4FFA621B65B042004231E5 /* OverScene.swift */; };
+		EC4FFA651B65B15C004231E5 /* retry.png in Resources */ = {isa = PBXBuildFile; fileRef = EC4FFA641B65B15C004231E5 /* retry.png */; };
 		EC88AC2E1B5C8ED200F2309E /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EC88AC2D1B5C8ED200F2309E /* bg.jpg */; };
 		EC88AC301B5DC99600F2309E /* spawn.wav in Resources */ = {isa = PBXBuildFile; fileRef = EC88AC2F1B5DC99600F2309E /* spawn.wav */; };
 		EC88AC3F1B5DCABD00F2309E /* bump.wav in Resources */ = {isa = PBXBuildFile; fileRef = EC88AC3B1B5DCABD00F2309E /* bump.wav */; };
@@ -16,6 +20,7 @@
 		EC88AC461B5DE28B00F2309E /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = EC88AC451B5DE28B00F2309E /* play.png */; };
 		EC88AC4A1B5DF18800F2309E /* walk1.wav in Resources */ = {isa = PBXBuildFile; fileRef = EC88AC491B5DF18800F2309E /* walk1.wav */; };
 		EC88AC4E1B5DF5E200F2309E /* explode.atlas in Resources */ = {isa = PBXBuildFile; fileRef = EC88AC4D1B5DF5E200F2309E /* explode.atlas */; };
+		EC88AC501B6313BC00F2309E /* Bomb.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC88AC4F1B6313BC00F2309E /* Bomb.swift */; };
 		ECFB49D11B5748E200BD2D51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFB49D01B5748E200BD2D51 /* AppDelegate.swift */; };
 		ECFB49D31B5748E200BD2D51 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = ECFB49D21B5748E200BD2D51 /* GameScene.sks */; };
 		ECFB49D51B5748E200BD2D51 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFB49D41B5748E200BD2D51 /* GameScene.swift */; };
@@ -38,6 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC4FFA581B653E79004231E5 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
+		EC4FFA601B659643004231E5 /* fuse.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = fuse.mp3; sourceTree = "<group>"; };
+		EC4FFA621B65B042004231E5 /* OverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverScene.swift; sourceTree = "<group>"; };
+		EC4FFA641B65B15C004231E5 /* retry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = retry.png; sourceTree = "<group>"; };
 		EC88AC2D1B5C8ED200F2309E /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
 		EC88AC2F1B5DC99600F2309E /* spawn.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = spawn.wav; sourceTree = "<group>"; };
 		EC88AC3B1B5DCABD00F2309E /* bump.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bump.wav; sourceTree = "<group>"; };
@@ -47,6 +56,7 @@
 		EC88AC451B5DE28B00F2309E /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
 		EC88AC491B5DF18800F2309E /* walk1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = walk1.wav; sourceTree = "<group>"; };
 		EC88AC4D1B5DF5E200F2309E /* explode.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = explode.atlas; sourceTree = "<group>"; };
+		EC88AC4F1B6313BC00F2309E /* Bomb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bomb.swift; sourceTree = "<group>"; };
 		ECFB49CB1B5748E200BD2D51 /* bombTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bombTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECFB49CF1B5748E200BD2D51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECFB49D01B5748E200BD2D51 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +90,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC4FFA531B648BF0004231E5 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				EC4FFA641B65B15C004231E5 /* retry.png */,
+				EC4FFA581B653E79004231E5 /* pause.png */,
+				EC88AC451B5DE28B00F2309E /* play.png */,
+				EC88AC2D1B5C8ED200F2309E /* bg.jpg */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		EC4FFA551B648C16004231E5 /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				EC4FFA601B659643004231E5 /* fuse.mp3 */,
+				EC88AC2F1B5DC99600F2309E /* spawn.wav */,
+				EC88AC3B1B5DCABD00F2309E /* bump.wav */,
+				EC88AC3D1B5DCABD00F2309E /* grab.wav */,
+				EC88AC491B5DF18800F2309E /* walk1.wav */,
+				EC88AC3E1B5DCABD00F2309E /* explode.wav */,
+				EC88AC431B5DDA7600F2309E /* bg.wav */,
+			);
+			name = sounds;
+			sourceTree = "<group>";
+		};
 		ECFB49C21B5748E200BD2D51 = {
 			isa = PBXGroup;
 			children = (
@@ -104,17 +139,13 @@
 				ECFB49D01B5748E200BD2D51 /* AppDelegate.swift */,
 				ECFB49D21B5748E200BD2D51 /* GameScene.sks */,
 				ECFB49D41B5748E200BD2D51 /* GameScene.swift */,
+				EC4FFA621B65B042004231E5 /* OverScene.swift */,
+				EC88AC4F1B6313BC00F2309E /* Bomb.swift */,
 				ECFB49D61B5748E200BD2D51 /* GameViewController.swift */,
 				ECFB49D81B5748E200BD2D51 /* Main.storyboard */,
 				ECFB49DB1B5748E200BD2D51 /* Images.xcassets */,
-				EC88AC2D1B5C8ED200F2309E /* bg.jpg */,
-				EC88AC451B5DE28B00F2309E /* play.png */,
-				EC88AC2F1B5DC99600F2309E /* spawn.wav */,
-				EC88AC3B1B5DCABD00F2309E /* bump.wav */,
-				EC88AC3D1B5DCABD00F2309E /* grab.wav */,
-				EC88AC491B5DF18800F2309E /* walk1.wav */,
-				EC88AC3E1B5DCABD00F2309E /* explode.wav */,
-				EC88AC431B5DDA7600F2309E /* bg.wav */,
+				EC4FFA551B648C16004231E5 /* sounds */,
+				EC4FFA531B648BF0004231E5 /* images */,
 				EC88AC4D1B5DF5E200F2309E /* explode.atlas */,
 				ECFB49F61B58B00500BD2D51 /* bomb.atlas */,
 				ECFB49DD1B5748E200BD2D51 /* LaunchScreen.xib */,
@@ -230,17 +261,20 @@
 			files = (
 				EC88AC411B5DCABD00F2309E /* grab.wav in Resources */,
 				EC88AC3F1B5DCABD00F2309E /* bump.wav in Resources */,
+				EC4FFA591B653E79004231E5 /* pause.png in Resources */,
 				ECFB49F71B58B00500BD2D51 /* bomb.atlas in Resources */,
 				EC88AC441B5DDA7600F2309E /* bg.wav in Resources */,
 				EC88AC421B5DCABD00F2309E /* explode.wav in Resources */,
 				EC88AC4E1B5DF5E200F2309E /* explode.atlas in Resources */,
 				ECFB49DF1B5748E200BD2D51 /* LaunchScreen.xib in Resources */,
 				ECFB49DC1B5748E200BD2D51 /* Images.xcassets in Resources */,
+				EC4FFA611B659643004231E5 /* fuse.mp3 in Resources */,
 				ECFB49D31B5748E200BD2D51 /* GameScene.sks in Resources */,
 				EC88AC4A1B5DF18800F2309E /* walk1.wav in Resources */,
 				EC88AC301B5DC99600F2309E /* spawn.wav in Resources */,
 				EC88AC2E1B5C8ED200F2309E /* bg.jpg in Resources */,
 				EC88AC461B5DE28B00F2309E /* play.png in Resources */,
+				EC4FFA651B65B15C004231E5 /* retry.png in Resources */,
 				ECFB49DA1B5748E200BD2D51 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,7 +294,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECFB49D51B5748E200BD2D51 /* GameScene.swift in Sources */,
+				EC88AC501B6313BC00F2309E /* Bomb.swift in Sources */,
 				ECFB49D71B5748E200BD2D51 /* GameViewController.swift in Sources */,
+				EC4FFA631B65B042004231E5 /* OverScene.swift in Sources */,
 				ECFB49D11B5748E200BD2D51 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,6 +427,7 @@
 				INFOPLIST_FILE = bombTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -401,6 +438,7 @@
 				INFOPLIST_FILE = bombTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
