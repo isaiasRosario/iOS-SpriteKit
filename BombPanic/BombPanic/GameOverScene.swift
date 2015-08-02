@@ -1,8 +1,8 @@
 //
-//  OverScene.swift
-//  bombTest
+//  GameOverScene.swift
+//  BombPanic
 //
-//  Created by Isaias Rosario on 7/26/15.
+//  Created by Isaias Rosario on 7/31/15.
 //  Copyright (c) 2015 Isaias Rosario. All rights reserved.
 //
 
@@ -24,11 +24,17 @@ class SecondScene: SKScene {
         
         
         var button = SKSpriteNode(imageNamed: "retry.png")
-        button.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)-100)
+        button.position = CGPointMake(CGRectGetMidX(self.frame)+200, CGRectGetMidY(self.frame)-100)
         button.name = "retry"
         
         self.addChild(button)
-     
+        
+        var button2 = SKSpriteNode(imageNamed: "home.png")
+        button2.position = CGPointMake(CGRectGetMidX(self.frame)-200, CGRectGetMidY(self.frame)-100)
+        button2.name = "home"
+        
+        self.addChild(button2)
+        
     }
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
@@ -41,8 +47,15 @@ class SecondScene: SKScene {
             var gameScene = GameScene(fileNamed: "GameScene")
             gameScene.size = self.size
             var transition = SKTransition.doorsCloseHorizontalWithDuration(0.5)
-            gameScene.scaleMode = SKSceneScaleMode.Fill
+            gameScene.scaleMode = SKSceneScaleMode.AspectFill
             self.scene!.view?.presentScene(gameScene, transition: transition)
+        }
+        if (node.name == "home") {
+            var menuScene = MenuScene(fileNamed: "MenuScene")
+            menuScene.size = self.size
+            var transition = SKTransition.doorsCloseHorizontalWithDuration(0.5)
+            menuScene.scaleMode = SKSceneScaleMode.AspectFill
+            self.scene!.view?.presentScene(menuScene, transition: transition)
         }
     }
     

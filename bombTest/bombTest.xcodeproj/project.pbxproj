@@ -21,6 +21,8 @@
 		EC4FFA7B1B65CE93004231E5 /* walk1.wav in Resources */ = {isa = PBXBuildFile; fileRef = EC4FFA741B65CE93004231E5 /* walk1.wav */; };
 		EC4FFA821B65D681004231E5 /* spark.sks in Resources */ = {isa = PBXBuildFile; fileRef = EC4FFA801B65D681004231E5 /* spark.sks */; };
 		EC4FFA831B65D681004231E5 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = EC4FFA811B65D681004231E5 /* spark.png */; };
+		EC4FFA851B684FB8004231E5 /* smoke.sks in Resources */ = {isa = PBXBuildFile; fileRef = EC4FFA841B684FB8004231E5 /* smoke.sks */; };
+		EC4FFA871B6852EE004231E5 /* explode.sks in Resources */ = {isa = PBXBuildFile; fileRef = EC4FFA861B6852EE004231E5 /* explode.sks */; };
 		EC88AC4E1B5DF5E200F2309E /* explode.atlas in Resources */ = {isa = PBXBuildFile; fileRef = EC88AC4D1B5DF5E200F2309E /* explode.atlas */; };
 		EC88AC501B6313BC00F2309E /* Bomb.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC88AC4F1B6313BC00F2309E /* Bomb.swift */; };
 		ECFB49D11B5748E200BD2D51 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECFB49D01B5748E200BD2D51 /* AppDelegate.swift */; };
@@ -59,6 +61,8 @@
 		EC4FFA741B65CE93004231E5 /* walk1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = walk1.wav; path = sounds/walk1.wav; sourceTree = "<group>"; };
 		EC4FFA801B65D681004231E5 /* spark.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = spark.sks; sourceTree = "<group>"; };
 		EC4FFA811B65D681004231E5 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		EC4FFA841B684FB8004231E5 /* smoke.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = smoke.sks; sourceTree = "<group>"; };
+		EC4FFA861B6852EE004231E5 /* explode.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = explode.sks; sourceTree = "<group>"; };
 		EC88AC4D1B5DF5E200F2309E /* explode.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = explode.atlas; sourceTree = "<group>"; };
 		EC88AC4F1B6313BC00F2309E /* Bomb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bomb.swift; sourceTree = "<group>"; };
 		ECFB49CB1B5748E200BD2D51 /* bombTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bombTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,13 +145,15 @@
 			isa = PBXGroup;
 			children = (
 				ECFB49D01B5748E200BD2D51 /* AppDelegate.swift */,
+				EC4FFA841B684FB8004231E5 /* smoke.sks */,
+				EC4FFA861B6852EE004231E5 /* explode.sks */,
 				EC4FFA801B65D681004231E5 /* spark.sks */,
 				EC4FFA811B65D681004231E5 /* spark.png */,
 				ECFB49D21B5748E200BD2D51 /* GameScene.sks */,
 				ECFB49D41B5748E200BD2D51 /* GameScene.swift */,
+				ECFB49D61B5748E200BD2D51 /* GameViewController.swift */,
 				EC4FFA621B65B042004231E5 /* OverScene.swift */,
 				EC88AC4F1B6313BC00F2309E /* Bomb.swift */,
-				ECFB49D61B5748E200BD2D51 /* GameViewController.swift */,
 				ECFB49D81B5748E200BD2D51 /* Main.storyboard */,
 				ECFB49DB1B5748E200BD2D51 /* Images.xcassets */,
 				EC4FFA551B648C16004231E5 /* sounds */,
@@ -267,6 +273,7 @@
 			files = (
 				EC4FFA791B65CE93004231E5 /* grab.wav in Resources */,
 				EC4FFA821B65D681004231E5 /* spark.sks in Resources */,
+				EC4FFA871B6852EE004231E5 /* explode.sks in Resources */,
 				EC4FFA761B65CE93004231E5 /* bump.wav in Resources */,
 				EC4FFA751B65CE93004231E5 /* bg.wav in Resources */,
 				ECFB49F71B58B00500BD2D51 /* bomb.atlas in Resources */,
@@ -276,6 +283,7 @@
 				EC4FFA781B65CE93004231E5 /* fuse.mp3 in Resources */,
 				EC4FFA771B65CE93004231E5 /* explode.wav in Resources */,
 				EC4FFA7B1B65CE93004231E5 /* walk1.wav in Resources */,
+				EC4FFA851B684FB8004231E5 /* smoke.sks in Resources */,
 				EC4FFA6B1B65CE76004231E5 /* pause.png in Resources */,
 				ECFB49DF1B5748E200BD2D51 /* LaunchScreen.xib in Resources */,
 				ECFB49DC1B5748E200BD2D51 /* Images.xcassets in Resources */,

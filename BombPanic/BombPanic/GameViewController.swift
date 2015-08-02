@@ -1,8 +1,8 @@
 //
 //  GameViewController.swift
-//  bombTest
+//  BombPanic
 //
-//  Created by Isaias Rosario on 7/15/15.
+//  Created by Isaias Rosario on 7/31/15.
 //  Copyright (c) 2015 Isaias Rosario. All rights reserved.
 //
 
@@ -27,31 +27,25 @@ extension SKNode {
 
 class GameViewController: UIViewController {
 
-    
-    override func viewDidLayoutSubviews() {
-        
-        super.viewDidLayoutSubviews()
-        
-        if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        if let scene = MenuScene.unarchiveFromFile("MenuScene") as? MenuScene {
             // Configure the view.
+            //let scene = var gameScene = GameScene(fileNamed: "GameScene")
             let skView = self.view as! SKView
-            skView.showsFPS = true
-            skView.showsNodeCount = true
+            skView.showsFPS = false
+            skView.showsNodeCount = false
+            
             /* Sprite Kit applies additional optimizations to improve rendering performance */
             skView.ignoresSiblingOrder = true
             
             /* Set the scale mode to scale to fit the window */
-            scene.scaleMode = SKSceneScaleMode.Fill
+            scene
+            scene.scaleMode = .AspectFill
             
             skView.presentScene(scene)
         }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-
-       
     }
 
     override func shouldAutorotate() -> Bool {
