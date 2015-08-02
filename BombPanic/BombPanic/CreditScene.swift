@@ -12,9 +12,7 @@ import SpriteKit
 class CreditScene: SKScene {
     
     override func didMoveToView(view: SKView) {
-        self.backgroundColor = SKColor.redColor()
-        
-        
+
         var button = SKSpriteNode(imageNamed: "home.png")
         button.yScale = 0.5
         button.xScale = 0.5
