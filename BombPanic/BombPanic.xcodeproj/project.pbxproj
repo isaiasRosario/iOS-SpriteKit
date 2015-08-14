@@ -42,6 +42,7 @@
 		EC8937CB1B6DB97900BEDA9D /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = EC8937CA1B6DB97900BEDA9D /* spark.png */; };
 		EC8937CD1B6DC19900BEDA9D /* CreditScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = EC8937CC1B6DC19900BEDA9D /* CreditScene.sks */; };
 		EC8937CF1B6DC1AC00BEDA9D /* InstructionScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = EC8937CE1B6DC1AC00BEDA9D /* InstructionScene.sks */; };
+		ECA39ACC1B7D8C2800A90784 /* timer.png in Resources */ = {isa = PBXBuildFile; fileRef = ECA39ACB1B7D8C2800A90784 /* timer.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		EC8937CA1B6DB97900BEDA9D /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spark.png; path = particles/spark.png; sourceTree = "<group>"; };
 		EC8937CC1B6DC19900BEDA9D /* CreditScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CreditScene.sks; sourceTree = "<group>"; };
 		EC8937CE1B6DC1AC00BEDA9D /* InstructionScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = InstructionScene.sks; sourceTree = "<group>"; };
+		ECA39ACB1B7D8C2800A90784 /* timer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timer.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +219,7 @@
 				EC8937AC1B6DB85E00BEDA9D /* bg.jpg */,
 				EC8937C21B6DB95500BEDA9D /* home.png */,
 				EC8937C31B6DB95500BEDA9D /* pause.png */,
+				ECA39ACB1B7D8C2800A90784 /* timer.png */,
 				EC8937C41B6DB95500BEDA9D /* play.png */,
 				EC8937C51B6DB95500BEDA9D /* retry.png */,
 			);
@@ -311,6 +314,7 @@
 				EC8937C71B6DB95500BEDA9D /* pause.png in Resources */,
 				EC8937BA1B6DB8F200BEDA9D /* fuse.mp3 in Resources */,
 				EC8937BF1B6DB8F800BEDA9D /* bg.wav in Resources */,
+				ECA39ACC1B7D8C2800A90784 /* timer.png in Resources */,
 				EC4FFAE71B6B31FC004231E5 /* LaunchScreen.xib in Resources */,
 				EC8937C81B6DB95500BEDA9D /* play.png in Resources */,
 				EC8937C91B6DB95500BEDA9D /* retry.png in Resources */,
