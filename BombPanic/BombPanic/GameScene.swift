@@ -366,6 +366,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             var secondScene = SecondScene(size: self.size)
             var transition = SKTransition.flipVerticalWithDuration(1.0)
             secondScene.scaleMode = SKSceneScaleMode.AspectFill
+            
+            var defaults = NSUserDefaults.standardUserDefaults()
+            
+            defaults.setObject(self.count, forKey : "Score")
+            
             self.scene!.view?.presentScene(secondScene, transition: transition)
             
         })
@@ -600,6 +605,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     var secondScene = SecondScene(size: self.size)
                     var transition = SKTransition.flipVerticalWithDuration(1.0)
                     secondScene.scaleMode = SKSceneScaleMode.AspectFill
+                    
+                    var defaults = NSUserDefaults.standardUserDefaults()
+                    
+                    defaults.setObject(self.count, forKey : "Score")
+                    
                     self.scene!.view?.presentScene(secondScene, transition: transition)
                     
                 })
@@ -711,6 +721,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     var secondScene = SecondScene(size: self.size)
                     var transition = SKTransition.flipVerticalWithDuration(1.0)
                     secondScene.scaleMode = SKSceneScaleMode.AspectFill
+                    
+                    var defaults = NSUserDefaults.standardUserDefaults()
+                    
+                    defaults.setObject(self.count, forKey : "Score")
+                    
                     self.scene!.view?.presentScene(secondScene, transition: transition)
                     
                 })

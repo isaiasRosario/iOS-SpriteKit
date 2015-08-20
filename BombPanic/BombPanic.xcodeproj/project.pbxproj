@@ -43,6 +43,10 @@
 		EC8937CD1B6DC19900BEDA9D /* CreditScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = EC8937CC1B6DC19900BEDA9D /* CreditScene.sks */; };
 		EC8937CF1B6DC1AC00BEDA9D /* InstructionScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = EC8937CE1B6DC1AC00BEDA9D /* InstructionScene.sks */; };
 		ECA39ACC1B7D8C2800A90784 /* timer.png in Resources */ = {isa = PBXBuildFile; fileRef = ECA39ACB1B7D8C2800A90784 /* timer.png */; };
+		ECDB363A1B84D0C300EC2E68 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECDB36391B84D0C300EC2E68 /* GameKit.framework */; };
+		ECDB363C1B85213500EC2E68 /* score.png in Resources */ = {isa = PBXBuildFile; fileRef = ECDB363B1B85213500EC2E68 /* score.png */; };
+		ECDB363E1B85216800EC2E68 /* ScoreScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDB363D1B85216800EC2E68 /* ScoreScene.swift */; };
+		ECDB36401B85222200EC2E68 /* ScoreScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = ECDB363F1B85222200EC2E68 /* ScoreScene.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EC057A7F1B84034600B2194F /* BombPanic.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BombPanic.entitlements; sourceTree = "<group>"; };
 		EC4FFAD31B6B31FB004231E5 /* BombPanic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BombPanic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC4FFAD71B6B31FB004231E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC4FFAD81B6B31FB004231E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +101,10 @@
 		EC8937CC1B6DC19900BEDA9D /* CreditScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CreditScene.sks; sourceTree = "<group>"; };
 		EC8937CE1B6DC1AC00BEDA9D /* InstructionScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = InstructionScene.sks; sourceTree = "<group>"; };
 		ECA39ACB1B7D8C2800A90784 /* timer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timer.png; sourceTree = "<group>"; };
+		ECDB36391B84D0C300EC2E68 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		ECDB363B1B85213500EC2E68 /* score.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = score.png; sourceTree = "<group>"; };
+		ECDB363D1B85216800EC2E68 /* ScoreScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreScene.swift; sourceTree = "<group>"; };
+		ECDB363F1B85222200EC2E68 /* ScoreScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ScoreScene.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECDB363A1B84D0C300EC2E68 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +129,7 @@
 		EC4FFACA1B6B31FB004231E5 = {
 			isa = PBXGroup;
 			children = (
+				ECDB36391B84D0C300EC2E68 /* GameKit.framework */,
 				EC4FFAD51B6B31FB004231E5 /* BombPanic */,
 				EC4FFAEF1B6B31FD004231E5 /* BombPanicTests */,
 				EC4FFAD41B6B31FB004231E5 /* Products */,
@@ -137,7 +148,9 @@
 		EC4FFAD51B6B31FB004231E5 /* BombPanic */ = {
 			isa = PBXGroup;
 			children = (
+				EC057A7F1B84034600B2194F /* BombPanic.entitlements */,
 				EC4FFADA1B6B31FB004231E5 /* GameScene.sks */,
+				ECDB363F1B85222200EC2E68 /* ScoreScene.sks */,
 				EC8937CE1B6DC1AC00BEDA9D /* InstructionScene.sks */,
 				EC8937CC1B6DC19900BEDA9D /* CreditScene.sks */,
 				EC4FFB041B6B3509004231E5 /* MenuScene.sks */,
@@ -147,6 +160,7 @@
 				EC4FFB021B6B34F8004231E5 /* MenuScene.swift */,
 				EC4FFAFE1B6B3472004231E5 /* CreditScene.swift */,
 				EC4FFAFC1B6B3420004231E5 /* GameOverScene.swift */,
+				ECDB363D1B85216800EC2E68 /* ScoreScene.swift */,
 				EC4FFADE1B6B31FB004231E5 /* GameViewController.swift */,
 				EC4FFB001B6B3497004231E5 /* InstructionScene.swift */,
 				EC4FFAE01B6B31FB004231E5 /* Main.storyboard */,
@@ -217,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				EC8937AC1B6DB85E00BEDA9D /* bg.jpg */,
+				ECDB363B1B85213500EC2E68 /* score.png */,
 				EC8937C21B6DB95500BEDA9D /* home.png */,
 				EC8937C31B6DB95500BEDA9D /* pause.png */,
 				ECA39ACB1B7D8C2800A90784 /* timer.png */,
@@ -275,6 +290,18 @@
 				TargetAttributes = {
 					EC4FFAD21B6B31FB004231E5 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 66R8VXXAHA;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
 					};
 					EC4FFAEB1B6B31FD004231E5 = {
 						CreatedOnToolsVersion = 6.4;
@@ -310,6 +337,7 @@
 				EC8937C11B6DB91200BEDA9D /* spark.sks in Resources */,
 				EC8937CD1B6DC19900BEDA9D /* CreditScene.sks in Resources */,
 				EC8937C61B6DB95500BEDA9D /* home.png in Resources */,
+				ECDB363C1B85213500EC2E68 /* score.png in Resources */,
 				EC8937AF1B6DB8A100BEDA9D /* bump.wav in Resources */,
 				EC8937C71B6DB95500BEDA9D /* pause.png in Resources */,
 				EC8937BA1B6DB8F200BEDA9D /* fuse.mp3 in Resources */,
@@ -320,6 +348,7 @@
 				EC8937C91B6DB95500BEDA9D /* retry.png in Resources */,
 				EC8937BC1B6DB8F200BEDA9D /* spawn.wav in Resources */,
 				EC8937B81B6DB8F200BEDA9D /* end.wav in Resources */,
+				ECDB36401B85222200EC2E68 /* ScoreScene.sks in Resources */,
 				EC8937BD1B6DB8F200BEDA9D /* walk1.wav in Resources */,
 				EC8937CB1B6DB97900BEDA9D /* spark.png in Resources */,
 				EC4FFB091B6B362F004231E5 /* bomb.atlas in Resources */,
@@ -356,6 +385,7 @@
 				EC4FFB071B6B3576004231E5 /* BombSetup.swift in Sources */,
 				EC4FFB031B6B34F8004231E5 /* MenuScene.swift in Sources */,
 				EC4FFB011B6B3497004231E5 /* InstructionScene.swift in Sources */,
+				ECDB363E1B85216800EC2E68 /* ScoreScene.swift in Sources */,
 				EC4FFAD91B6B31FB004231E5 /* AppDelegate.swift in Sources */,
 				EC4FFAFF1B6B3472004231E5 /* CreditScene.swift in Sources */,
 			);
@@ -486,9 +516,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = BombPanic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -496,9 +529,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = BombPanic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
