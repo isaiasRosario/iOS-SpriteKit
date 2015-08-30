@@ -9,6 +9,7 @@
 import Foundation
 import SpriteKit
 import GameKit
+import Social
 
 class SecondScene: SKScene {
     var defaults = NSUserDefaults.standardUserDefaults()
@@ -99,6 +100,22 @@ class SecondScene: SKScene {
         
         self.addChild(button3)
         
+        var button4 = SKSpriteNode(imageNamed: "facebook.png")
+        button4.xScale = 0.5
+        button4.yScale = 0.5
+        button4.position = CGPointMake(CGRectGetMidX(self.frame)-380, CGRectGetMidY(self.frame)+150)
+        button4.name = "facebook"
+        
+        self.addChild(button4)
+        
+        var button5 = SKSpriteNode(imageNamed: "twitter.png")
+        button5.xScale = 0.5
+        button5.yScale = 0.5
+        button5.position = CGPointMake(CGRectGetMidX(self.frame)+380, CGRectGetMidY(self.frame)+150)
+        button5.name = "twitter"
+        
+        self.addChild(button5)
+        
     }
     
     // Save high score to Gmae Center function
@@ -169,6 +186,28 @@ class SecondScene: SKScene {
             var transition = SKTransition.doorsCloseHorizontalWithDuration(0.5)
             scoreScene.scaleMode = SKSceneScaleMode.AspectFill
             self.scene!.view?.presentScene(scoreScene, transition: transition)
+        }
+        
+        // Facebook Button
+        if (node.name == "facebook") {
+            var facebook: SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+            
+            facebook.setInitialText("My Score on Bomb Panic! is \(score_1)")
+            
+            let vc: UIViewController = self.view!.window!.rootViewController!
+            vc.presentViewController(facebook, animated: true, completion: nil)
+           
+        }
+        
+        // Twitter Button
+        if (node.name == "twitter") {
+            var twitter: SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+            
+            twitter.setInitialText("My Score on Bomb Panic! is \(score_1)")
+            
+            let vc: UIViewController = self.view!.window!.rootViewController!
+            vc.presentViewController(twitter, animated: true, completion: nil)
+     
         }
     }
     

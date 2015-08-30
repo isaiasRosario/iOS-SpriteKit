@@ -9,7 +9,7 @@
 import SpriteKit
 import SceneKit
 import AVFoundation
-
+import GameKit
 
 // Physic Categories for Sprites
 struct PhysicsCategory {
@@ -43,9 +43,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var bool = true
     
+    var time: NSTimer!
+    
     
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
+        var time = NSTimer.scheduledTimerWithTimeInterval(10.0, target: self, selector: Selector("updateAchievements"), userInfo: nil, repeats: false)
         
         // Cage floor set up
         let blackFloor = childNodeWithName("blackFloor")
@@ -83,7 +86,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         timer.zPosition = 3.0
         timer.yScale = 0.3
         timer.xScale = 0.3
-        timer.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
+        timer.position = CGPoint(x:CGRectGetMidX(self.frame)+430, y:CGRectGetMidY(self.frame)-220)
         timer.hidden = true
         self.addChild(timer)
  
@@ -251,10 +254,29 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.bgMP.pause()
             self.bomb.removeFromParent()
             
+            var defaults = NSUserDefaults.standardUserDefaults()
+            
+            defaults.setObject(self.count, forKey : "Score")
+            
             var secondScene = SecondScene(size: self.size)
             var transition = SKTransition.flipVerticalWithDuration(1.0)
             secondScene.scaleMode = SKSceneScaleMode.AspectFill
             self.scene!.view?.presentScene(secondScene, transition: transition)
+            
+            var blowAchievement: GKAchievement!
+            
+            blowAchievement = GKAchievement(identifier: "blowup")
+            
+            if blowAchievement != nil {
+                
+                blowAchievement.identifier = "blowup"
+                blowAchievement.percentComplete = 100.00
+                blowAchievement.showsCompletionBanner = true
+                
+                GKAchievement.reportAchievements([blowAchievement], withCompletionHandler: { (error : NSError!) -> Void in
+                    println("Its reported!")
+                })
+            }
             
         })
         
@@ -372,6 +394,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             defaults.setObject(self.count, forKey : "Score")
             
             self.scene!.view?.presentScene(secondScene, transition: transition)
+            
+            var blowAchievement: GKAchievement!
+            
+            blowAchievement = GKAchievement(identifier: "blowup")
+            
+            if blowAchievement != nil {
+                
+                blowAchievement.identifier = "blowup"
+                blowAchievement.percentComplete = 100.00
+                blowAchievement.showsCompletionBanner = true
+                
+                GKAchievement.reportAchievements([blowAchievement], withCompletionHandler: { (error : NSError!) -> Void in
+                    println("Its reported!")
+                })
+            }
             
         })
         
@@ -522,6 +559,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 count = count+1
                 score.text = String(count)
                 
+                updateAchievements()
+                
                 // FEATURE ITEM ##--1 and 2--## //
                 // #1 Adds bombs at fater rate after a certain score
                 // #2 Add more bombs from the bottom up as the score goes up
@@ -612,6 +651,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     
                     self.scene!.view?.presentScene(secondScene, transition: transition)
                     
+                    var blowAchievement: GKAchievement!
+                    
+                    blowAchievement = GKAchievement(identifier: "blowup")
+                    
+                    if blowAchievement != nil {
+                        
+                        blowAchievement.identifier = "blowup"
+                        blowAchievement.percentComplete = 100.00
+                        blowAchievement.showsCompletionBanner = true
+                        
+                        GKAchievement.reportAchievements([blowAchievement], withCompletionHandler: { (error : NSError!) -> Void in
+                            println("Its reported!")
+                        })
+                    }
+                    
                 })
                 
                 println("Wrong Bomb!")
@@ -637,9 +691,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 
                 count = count+1
                 score.text = String(count)
+                updateAchievements()
                 
                 // FEATURE ITEM ##--1 and 2--## //
-                // #1 Adds bombs at fater rate after a certain score
+                // #1 Adds bombs at faster rate after a certain score
                 // #2 Add more bombs from the bottom up as the score goes up
                 //
                 //
@@ -728,11 +783,123 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     
                     self.scene!.view?.presentScene(secondScene, transition: transition)
                     
+                    var blowAchievement: GKAchievement!
+                    
+                    blowAchievement = GKAchievement(identifier: "blowup")
+                    
+                    if blowAchievement != nil {
+                        
+                        blowAchievement.identifier = "blowup"
+                        blowAchievement.percentComplete = 100.00
+                        blowAchievement.showsCompletionBanner = true
+                        
+                        GKAchievement.reportAchievements([blowAchievement], withCompletionHandler: { (error : NSError!) -> Void in
+                            println("Its reported!")
+                        })
+                    }
+                    
                 })
                 
                 println("Wrong Bomb!")
             }
             
+        }
+        
+    }
+    
+
+    //Report and Update achievements
+    func updateAchievements(){
+        var achievementId: String! = ""
+        var progress = 0.0
+        var scoreAchievement: GKAchievement!
+        var inAchievement: GKAchievement!
+        var meAchievement: GKAchievement!
+        
+        
+        if count == 10 {
+            progress = 100;
+            achievementId = "10"
+            
+            //Incremental Achievement
+            inAchievement = GKAchievement(identifier: "50")
+            inAchievement.identifier = "50"
+            inAchievement.percentComplete = 20.0
+            
+            scoreAchievement = GKAchievement(identifier: achievementId)
+            scoreAchievement.showsCompletionBanner = true
+        }
+        else if count == 20{
+            progress = 100
+            achievementId = "20"
+            
+            //Incremental Achievement
+            inAchievement = GKAchievement(identifier: "50")
+            inAchievement.identifier = "50"
+            inAchievement.percentComplete = 40.0
+            
+            scoreAchievement = GKAchievement(identifier: achievementId)
+            scoreAchievement.showsCompletionBanner = true
+        }
+        else if count == 30{
+            progress = 100
+            achievementId = "30"
+            
+            //Incremental Achievement
+            inAchievement = GKAchievement(identifier: "50")
+            inAchievement.identifier = "50"
+            inAchievement.percentComplete = 60.0
+            
+            scoreAchievement = GKAchievement(identifier: achievementId)
+            scoreAchievement.showsCompletionBanner = true
+        }else if count == 40{
+            
+            //Incremental Achievement
+            inAchievement = GKAchievement(identifier: "50")
+            inAchievement.identifier = "50"
+            inAchievement.percentComplete = 80.0
+            
+        }else if count == 50{
+            
+            //Incremental Achievement
+            inAchievement = GKAchievement(identifier: "50")
+            inAchievement.identifier = "50"
+            inAchievement.percentComplete = 100.0
+            inAchievement.showsCompletionBanner = true
+        }
+        
+        if count >= 5 && count < 10 && time == nil{
+            
+            //Measured Achievement
+            meAchievement = GKAchievement(identifier: "5in10")
+            meAchievement.identifier = "5in10"
+            meAchievement.percentComplete = 100.0
+            meAchievement.showsCompletionBanner = true
+            
+        }
+        
+        if meAchievement != nil {
+            
+            GKAchievement.reportAchievements([meAchievement], withCompletionHandler: { (error : NSError!) -> Void in
+                println("Measured Reported!")
+            })
+        }
+        
+        if inAchievement != nil {
+            
+            GKAchievement.reportAchievements([inAchievement], withCompletionHandler: { (error : NSError!) -> Void in
+                println("Incremental reported!")
+            })
+        }
+        
+        if scoreAchievement != nil {
+            
+            scoreAchievement.identifier = achievementId
+            scoreAchievement.percentComplete = progress
+           
+            GKAchievement.reportAchievements([scoreAchievement], withCompletionHandler: { (error : NSError!) -> Void in
+                println("Completion reported!")
+            })
         }
         
     }
